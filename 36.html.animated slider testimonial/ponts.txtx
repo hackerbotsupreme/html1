@@ -1,0 +1,64 @@
+so the main tactic to make this thing to to 
+adding and removing a particular classs name.
+where the text changes acoorading to which pic we have clicked 
+as the classname gets added to the classes of clicked pic 
+and the defined css styles also  gets applied  accorading to the 
+clicked pic . 
+
+so overall the text is acting like vessel 
+and it makes a visual effect of contaning all the 
+text but only containing one at a time .
+
+
+Your description of the text acting like a vessel, containing all the text but displaying only one at a time, is accurate. This approach allows for a visually appealing testimonial slider where the user can click on different pictures to view corresponding testimonials one at a time. It's a practical and effective method for creating this type of interactive content on a web page.
+
+
+////////////////////
+
+so in order to depict that into reality 
+
+we will do like , 
+for text ,
+
+for other text ,
+.user-text {
+  display: none;
+}
+
+
+for  text of the clicked text ,
+.user-text.active-text {
+  display: block;
+  animation: moveup 0.5s linear forwards;
+}
+
+
+and for the  active-pic,
+.user-pic.active-pic {
+  width: 100px;
+  border: 3px solid #ff0058;
+}
+
+
+
+//////////////////////////////// so 
+this is how we do this but also 
+lets talk about positioning of it ,
+
+
+as we dont need any positional background
+so we have chosed  display: flex ,
+
+
+and for the pic's in a line , 
+make a div that contains all the  pics 
+like,
+
+.testimonial-pic {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+and everything is done .

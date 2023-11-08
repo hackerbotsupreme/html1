@@ -1,0 +1,53 @@
+<!--  easy tutorials ---how to create image gallery javascript |horizontal scrolling using  javascript  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>HORIZONTAL SCROLLBAR USING JS</title>
+  </head>
+  <body>
+    <div class="gallery-wrap">
+      <img src="back.png" id="backBtn" />
+      <div class="gallery">
+        <div>
+          <span><img src="image-1.png" /> </span>
+          <span><img src="image-2.png" /> </span>
+          <span><img src="image-3.png" /> </span>
+        </div>
+        <div>
+          <span><img src="image-4.png" /> </span>
+          <span><img src="image-5.png" /> </span>
+          <span><img src="image-6.png" /> </span>
+        </div>
+      </div>
+      <img src="next.png" id="nextBtn" />
+    </div>
+    <script>
+      let scrollContainer = document.querySelector(".gallery");
+      let backBtn = document.getElementById("backBtn");
+      let nextBtn = document.getElementById("nextBtn");
+      //  wheel means mouse scrolling  or scrolling
+      scrollContainer.addEventListener("wheel", (evt) => {
+        scrollContainer.scrollLeft += evt.deltaY;
+        // evt.preventDefault();
+        // scrollContainer.style.scrollBehavior="auto";
+      });
+      nextBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+      });
+      backBtn.addEventListener("click", () => {
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -= 900;
+      });
+    </script>
+  </body>
+</html>
+<!-- // evt.preventDefault();:
+This line, when uncommented, prevents the default behavior of the "wheel" event. It's intended to prevent the entire webpage from scrolling vertically when the user interacts with the mouse wheel within the scrollContainer. However, in some cases, the commented-out line might not be necessary if your page design already ensures that only the scrollContainer is scrollable horizontally. If the whole system works as expected without this line and the default scrolling behavior doesn't cause any issues, you might choose to leave it commented out.
+
+// scrollContainer.style.scrollBehavior="auto";: -->
+<!-- This line, when uncommented, temporarily sets the scrollBehavior CSS property of the scrollContainer to "auto". The scrollBehavior property controls the scrolling animation behavior. Setting it to "auto" makes the scrolling responsive and immediate, without any animation. However, if your design already provides a satisfactory scrolling experience without this line (for example, if your browser's default scrolling behavior is already smooth enough), you might not need to include it. -->
